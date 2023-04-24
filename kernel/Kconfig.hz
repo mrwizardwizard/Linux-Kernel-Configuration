@@ -1,0 +1,161 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# Timer Interrupt Frequency Configuration
+#
+
+
+choice
+	prompt "Timer frequencies"
+	default HZ_320
+	help
+	 Configuration of the timer frequency.
+	 Sources:include/linux/jiffies.h
+	 Sources:include/asm-generic/param.h
+
+	 Hz formula:
+	 1000 / X
+
+	 Complete Hertz Numbers:
+	 1, 2, 4, 5, 8, 10, 16, 20, 25, 40, 50, 64, 80, 100, 125, 160, 200, 250,
+	 400, 500, 625, 640, 800, 1000
+
+	config HZ_16
+		bool "16 HZ"
+	help
+	 16 ticks per second.
+	 62.5ms each tick.
+
+	config HZ_20
+		bool "20 HZ"
+	help
+	 20 ticks per second.
+	 50ms each tick.
+
+	config HZ_25
+		bool "25 HZ"
+	help
+	 25 ticks per second.
+	 40ms each tick.
+
+	config HZ_40
+		bool "40 HZ"
+	help
+	 40 ticks per second.
+	 25ms each tick.
+
+	config HZ_50
+		bool "50 HZ"
+	help
+	 50 ticks per second.
+	 20ms each tick.
+
+	config HZ_64
+		bool "64 HZ"
+	help
+	 64 ticks per second.
+	 15.625ms each tick.
+
+	config HZ_80
+		bool "80 HZ"
+	help
+	 80 ticks per second.
+	 12.5ms each tick.
+
+	config HZ_100
+		bool "100 HZ"
+	help
+	 100 ticks per second.
+	 10ms each tick.
+
+	config HZ_125
+		bool "125 HZ"
+	help
+	 125 ticks per second.
+	 8ms each tick.
+
+	config HZ_160
+		bool "160 HZ"
+	help
+	 160 ticks per second.
+	 6.25ms each tick.
+
+	config HZ_200
+		bool "200 HZ"
+	help
+	 200 ticks per second.
+	 5ms each tick.
+
+	config HZ_250
+		bool "250 HZ"
+	help
+	 250 ticks per second.
+	 4ms each tick.
+
+	config HZ_320
+		bool "320 HZ"
+	help
+	 320 ticks per second.
+	 3.125ms each tick.
+
+	config HZ_400
+		bool "400 HZ"
+	help
+	 400 ticks per second.
+	 2.5ms each tick.
+
+	config HZ_500
+		bool "500 HZ"
+	help
+	 500 ticks per second.
+	 2ms each tick.
+
+	config HZ_625
+		bool "625 HZ"
+	help
+	 625 ticks per second.
+	 1.6ms each tick.
+
+	config HZ_640
+		bool "640 HZ"
+	help
+	 640 ticks per second.
+	 1.5625ms each tick.
+
+	config HZ_800
+		bool "800 HZ"
+	help
+	 800 ticks per second.
+	 1.25ms each tick.
+
+	config HZ_1000
+		bool "1000 HZ"
+	help
+	 1000 ticks per second.
+	 1ms each tick.
+
+endchoice
+
+config HZ
+	int
+	default 16 if HZ_16
+	default 20 if HZ_20
+	default 25 if HZ_25
+	default 40 if HZ_40
+	default 50 if HZ_50
+	default 64 if HZ_64
+	default 80 if HZ_80
+	default 100 if HZ_100
+	default 125 if HZ_125
+	default 160 if HZ_160
+	default 200 if HZ_200
+	default 250 if HZ_250
+	default 320 if HZ_320
+	default 400 if HZ_400
+	default 500 if HZ_500
+	default 625 if HZ_625
+	default 640 if HZ_640
+	default 800 if HZ_800
+	default 1000 if HZ_1000
+
+config SCHED_HRTICK
+	def_bool HIGH_RES_TIMERS
