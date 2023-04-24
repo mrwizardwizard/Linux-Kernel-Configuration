@@ -8,15 +8,15 @@ GNU-Linux-Configuration: https://github.com/mrwizardwizard/GNU-Linux-Configurati
 
 3.125ms (320Hz) kernel interrupt timer frequency for the linux kernel to obtain stability on the low latency spectrum.
 
+**Makefile.patch**
+
+Copy this patch to the main kernel directory and run "patch -p1 < Makefile.patch"
+
 **buildkernel.sh**
 
 This is a build script written to optimize the linux kernel with GCC optimization flags for performance and more security on x86 systems.
 
 this script needs to be copied to the main kernel directory and executed with sh buildkernel.sh
-
-**Makefile.patch**
-
-Copy this patch to the main kernel directory and run "patch -p1 < Makefile.patch"
 
 **Sources:**
 
