@@ -10,7 +10,7 @@ GNU-Linux-Configuration: https://github.com/mrwizardwizard/GNU-Linux-Configurati
 
 **Makefile.patch**
 
-Copy this patch to the main kernel directory and run "patch -p1 < Makefile.patch"
+Copy this patch to the root of the kernel source directory and run "patch -p1 < Makefile.patch"
 
 **buildkernel.sh**
 
@@ -18,7 +18,7 @@ This is a build script written to optimize the linux kernel with GCC optimizatio
 
 this script needs to be copied to the main kernel directory and executed with sh buildkernel.sh
 
-buildkernel.sh needs Makefile.patch to add KBUILD_CXXFLAGS and KBUILD_LDFLAGS to the top level Makefile of the linux kernel.
+buildkernel.sh needs Makefile.patch to add KBUILD_CXXFLAGS and KBUILD_LDFLAGS to the root of the kernel source directory.
 
 **Sources:**
 
