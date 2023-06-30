@@ -9,7 +9,7 @@
 echo "Starting kernel build script"
 
 # Performance CPP/C Kernel Flags
-#KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -U_GLIBCXX_ASSERTIONS"
+#KBUILD_CPPFLAGS="-Wp,-U_FORTIFY_SOURCE -Wp,-U_GLIBCXX_ASSERTIONS"
 #KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -pipe -fuse-linker-plugin -flto=auto -ffat-lto-objects"
 
 # Security CPP/C Kernel Flags
