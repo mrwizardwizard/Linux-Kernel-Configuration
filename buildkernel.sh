@@ -80,7 +80,7 @@ sudo umount /tmp
 sudo mount -t tmpfs -o size=95%,rw,async,auto,noatime,huge=always,nodev,exec,nosuid,nouser /tmp
 echo "Copy kernel directory to /tmp/"
 cd ..
-cp -R linux-*.*.*/ /tmp/linux-*.*.* || cp -R linux-*.*/ /tmp/linux-*.* && sync
+cp -R linux-*.*.* /tmp/linux-*.*.* || cp -R linux-*.* /tmp/linux-*.* && sync
 cd /tmp/linux*
 echo "Building kernel in /tmp/"
 make -j 2 -l 2.00 -s -S
