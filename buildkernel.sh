@@ -1,5 +1,8 @@
 #!/bin/bash
 
+### mrwizardwizard's github ###
+### https://github.com/mrwizardwizard ###
+
 # This build script was written and tested on a pure 64 bit system.
 # Change KBUILD_AFLAGS -mtune= to the right option for your cpu, read "man as" for more details.
 # Change flto= to the number of cores you have, example flto=2 for 2 cores, flto=auto for automatic selection of avaliable cores.
