@@ -54,7 +54,7 @@ KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -pipe
 elif test $SELECTION == Security; then
 # Security CPP/C Kernel Flags
 KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -U_GLIBCXX_ASSERTIONS -D_GLIBCXX_ASSERTIONS"
-KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-all -fstack-clash-protection -fstack-check -pipe -fuse-linker-plugin -flto=auto -ffat-lto-objects"
+KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-all -fstack-clash-protection -fstack-check -ftrivial-auto-var-init=zero -pipe -fuse-linker-plugin -flto=auto -ffat-lto-objects"
 
 fi
 
