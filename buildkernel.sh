@@ -49,18 +49,18 @@ read SELECTION
 if test $SELECTION == Performance; then
 # Performance CPP/C Kernel Flags
 KBUILD_CPPFLAGS="-Wp,-U_FORTIFY_SOURCE -Wp,-U_GLIBCXX_ASSERTIONS"
-KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -pipe -fuse-linker-plugin -flto=auto -ffat-lto-objects"
+KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -pipe"
 
 elif test $SELECTION == Security; then
 # Security CPP/C Kernel Flags
 KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -U_GLIBCXX_ASSERTIONS -D_GLIBCXX_ASSERTIONS"
-KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-all -fstack-clash-protection -fstack-check -ftrivial-auto-var-init=zero -pipe -fuse-linker-plugin -flto=auto -ffat-lto-objects"
+KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-all -fstack-clash-protection -fstack-check -ftrivial-auto-var-init=zero -pipe"
 
 fi
 
 # CXX/LD/AS/RUST Kernel Flags
 KBUILD_CXXFLAGS="${KBUILD_CFLAGS} -fvisibility-inlines-hidden"
-KBUILD_LDFLAGS="--as-needed -O2 --sort-common --enable-new-dtags --hash-style=gnu -z combreloc -z now -z relro -z separate-code -z noexecstack -z global -z interpose -z common-page-size=1024 --no-omagic --force-group-allocation --compress-debug-sections=none --build-id=none -flto=auto"
+KBUILD_LDFLAGS="--as-needed -O2 --sort-common --enable-new-dtags --hash-style=gnu -z combreloc -z now -z relro -z separate-code -z noexecstack -z global -z interpose -z common-page-size=1024 --no-omagic --force-group-allocation --compress-debug-sections=none --build-id=none"
 KBUILD_AFLAGS="-Wa,-Os -Wa,-acdn -Wa,-mtune=generic64 -Wa,--strip-local-absolute -Wa,-mrelax-relocations=yes -Wa,-mintel64 -Wa,--64"
 KBUILD_RUSTFLAGS="-Ctarget-cpu=native -Ztune-cpu=native"
 
