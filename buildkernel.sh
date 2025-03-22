@@ -23,6 +23,9 @@ elif test $SELECTION == arm; then
 export ARCH=arm64
 export CROSS_COMPILE=aarch64-linux-gnu-
 
+else
+exit
+
 fi
 
 echo "Type makemenu, oldconfig, distclean or buildkernel"
@@ -55,6 +58,9 @@ elif test $SELECTION == Security; then
 # Security CPP/C Kernel Flags
 KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -U_GLIBCXX_ASSERTIONS -D_GLIBCXX_ASSERTIONS"
 KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-all -fstack-clash-protection -fstack-check -ftrivial-auto-var-init=zero -pipe"
+
+else
+exit
 
 fi
 
@@ -92,6 +98,12 @@ elif test $SELECTION == hd; then
 echo "Building kernel in hd"
 make -j 2 -l 2.00 -s -S
 
+else
+exit
+
 fi
+
+else
+exit
 
 fi
