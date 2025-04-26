@@ -45,18 +45,23 @@ ARCH=arm make distclean
 ARCH=arm64 make distclean
 
 elif test $SELECTION == buildkernel; then
-echo -e "Select either Performance or Security compiler flags\nType Performance or Security"
+echo -e "Select either Performance, Performance/Security or Security compiler flags\nType Performance, Performance/Security or Security"
 
 read SELECTION
 
 if test $SELECTION == Performance; then
 # Performance CPP/C Kernel Flags
-KBUILD_CPPFLAGS="-Wp,-U_FORTIFY_SOURCE -Wp,-U_GLIBCXX_ASSERTIONS"
+KBUILD_CPPFLAGS="-U _FORTIFY_SOURCE -U _GLIBCXX_ASSERTIONS"
 KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -pipe"
+
+elif test $SELECTION == Performance/Security; then
+# Performance/Security CPP/C Kernel Flags
+KBUILD_CPPFLAGS="-U _FORTIFY_SOURCE -D _FORTIFY_SOURCE=1 -U _GLIBCXX_ASSERTIONS"
+KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector -pipe"
 
 elif test $SELECTION == Security; then
 # Security CPP/C Kernel Flags
-KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=3 -U_GLIBCXX_ASSERTIONS -D_GLIBCXX_ASSERTIONS"
+KBUILD_CPPFLAGS="-U _FORTIFY_SOURCE -D _FORTIFY_SOURCE=3 -U _GLIBCXX_ASSERTIONS -D _GLIBCXX_ASSERTIONS"
 KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-all -fstack-clash-protection -fstack-check -ftrivial-auto-var-init=zero -pipe"
 
 else
