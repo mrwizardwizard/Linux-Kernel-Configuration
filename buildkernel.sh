@@ -52,12 +52,12 @@ read SELECTION
 if test $SELECTION == Performance; then
 # Performance CPP/C Kernel Flags
 KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -U_GLIBCXX_ASSERTIONS"
-KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -pipe"
+KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fno-stack-protector -fno-stack-clash-protection -fno-stack-check -pipe"
 
 elif test $SELECTION == Performance/Security; then
 # Performance/Security CPP/C Kernel Flags
 KBUILD_CPPFLAGS="-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -U_GLIBCXX_ASSERTIONS -D_GLIBCXX_ASSERTIONS"
-KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-strong -pipe"
+KBUILD_CFLAGS="-w -g0 -O2 -march=native -mtune=native -fomit-frame-pointer -fstack-protector-strong -fno-stack-clash-protection -fno-stack-check -pipe"
 
 elif test $SELECTION == Security; then
 # Security CPP/C Kernel Flags
