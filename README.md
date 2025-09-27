@@ -6,7 +6,7 @@ GNU-Linux-Configuration: https://github.com/mrwizardwizard/GNU-Linux-Configurati
  
 **Kconfig.hz**
 
-3.125ms (320Hz) kernel interrupt timer frequency for the linux kernel to obtain stability on the low latency spectrum.
+3.125ms (320Hz) kernel interrupt timer frequency for the linux kernel to obtain stability within the hertz formula.
 
 **Makefile.patch**
 
