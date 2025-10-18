@@ -71,7 +71,7 @@ fi
 
 # CXX/LD/AS/RUST Kernel Flags
 KBUILD_CXXFLAGS="${KBUILD_CFLAGS} -fvisibility-inlines-hidden"
-KBUILD_LDFLAGS="--as-needed -O2 --sort-common --enable-new-dtags --hash-style=gnu -z combreloc -z now -z relro -z separate-code -z noexecstack -z global -z interpose -z common-page-size=1024 --no-omagic --force-group-allocation --compress-debug-sections=none --build-id=none"
+KBUILD_LDFLAGS="--as-needed -O2 --sort-common --enable-new-dtags --hash-style=gnu -z combreloc -z now -z relro -z separate-code -z noexecstack -z global -z interpose -z common-page-size=4096 --no-omagic --force-group-allocation --compress-debug-sections=none --build-id=none"
 KBUILD_AFLAGS="-Wa,-Os -Wa,-acdn -Wa,-mtune=generic64 -Wa,--strip-local-absolute -Wa,-mrelax-relocations=yes -Wa,-mintel64 -Wa,--64"
 KBUILD_RUSTFLAGS="-Ctarget-cpu=native -Ztune-cpu=native"
 
