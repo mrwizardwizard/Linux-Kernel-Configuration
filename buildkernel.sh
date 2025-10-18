@@ -45,7 +45,7 @@ ARCH=arm make distclean
 ARCH=arm64 make distclean
 
 elif test $SELECTION == buildkernel; then
-echo -e "Select either Performance, Performance/Security or Security compiler flags\nType Performance, Performance/Security or Security"
+echo -e "Select either Performance (Network insecure), Performance/Security or Security compiler flags\nType Performance, Performance/Security or Security"
 
 read SELECTION
 
