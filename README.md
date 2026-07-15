@@ -18,7 +18,7 @@ This is a build script written to optimize the linux kernel with GCC optimizatio
 
 this script needs to be copied to the main kernel directory and executed with sh buildkernel.sh
 
-buildkernel.sh needs Makefile.patch to add KBUILD_CXXFLAGS and KBUILD_LDFLAGS to the root of the kernel source directory.
+buildkernel.sh needs Makefile.patch to add KBUILD_CXXFLAGS and KBUILD_LDFLAGS to the root of the kernel source directory's makefile.
 
 **Sources:**
 
